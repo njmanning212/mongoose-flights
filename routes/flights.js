@@ -7,5 +7,6 @@ const router = Router()
 router.get('/', flightCtrl.index)
 router.get('/new', flightCtrl.new)
 router.post('/', flightCtrl.create)
+router.delete('/:flightId', flightCtrl.delete)
 
 export { router }

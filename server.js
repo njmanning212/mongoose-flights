@@ -6,6 +6,7 @@ import { fileURLToPath } from 'url'
 import createError from 'http-errors'
 import logger from 'morgan'
 import './config/database.js'
+import methodOverride from "method-override"
 
 
 // import routers
@@ -29,6 +30,7 @@ app.use(
 )
 
 // mount imported routes
+app.use(methodOverride('_method'))
 app.use('/', indexRouter)
 app.use('/flights', flightsRouter)
 
