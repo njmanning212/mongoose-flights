@@ -6,6 +6,7 @@ const router = Router()
 // GET localhost:3000/users
 router.get('/', flightCtrl.index)
 router.get('/new', flightCtrl.new)
+router.get('/:flightId', flightCtrl.show)
 router.post('/', flightCtrl.create)
 router.delete('/:flightId', flightCtrl.delete)
 
