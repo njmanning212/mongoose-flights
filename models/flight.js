@@ -22,11 +22,9 @@ const flightSchema = new Schema ({
   departs: {
     type: Date,
     default: function (){
-      let today = new Date()
-      let oneYearFromToday = new Date()
-      oneYearFromToday.setDate(today.getDate())
-      oneYearFromToday.setMonth(today.getMonth())
-      oneYearFromToday.setFullYear(today.getFullYear() + 1)
+      let today = new Date();
+      let oneYearFromToday = new Date(today.getTime());
+      oneYearFromToday.setFullYear(today.getFullYear() + 1);
       return oneYearFromToday
     }
   } 

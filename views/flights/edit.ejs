@@ -26,7 +26,7 @@
     <input type="text" name="flightNo" id="flight-number" value="<%= flight.flightNo %>">
     
     <label for="departure-date">Departure Date (if not specified: one year from today):</label>
-    <input type="datetime-local" name="departs" id="flight-number" value="<%= flight.departs %>">
+    <input type="datetime-local" name="departs" id="flight-number" value="<%= flight.departs.toISOString().slice(0, 16)%>">
 
     <button type="submit">Edit Flight</button>
   </form>
