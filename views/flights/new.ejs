@@ -6,7 +6,7 @@
   <h1><%= title %></h1>
   <form id="new-form" action="/flights" method="POST">
 
-    <label for="airline-input">Airline:</label>
+    <label for="airline-input">Airline (American, Southwest, or United):</label>
     <input type="text" name="airline" id="airline-input">
     
     <label for="airport-select">Airport:</label>
@@ -18,11 +18,11 @@
       <option value="SAN">SAN</option>
     </select>
 
-    <label for="flight-number">Flight Number:</label>
+    <label for="flight-number">Flight Number (between 10-9999):</label>
     <input type="text" name="flightNo" id="flight-number">
     
-    <label for="departure-date">Departure Date:</label>
-    <input type="datetime-local" name="flightNo" id="flight-number">
+    <label for="departure-date">Departure Date (if not specified: one year from today):</label>
+    <input type="datetime-local" name="departs" id="flight-number">
 
     <button type="submit">Add Movie</button>
   </form>
