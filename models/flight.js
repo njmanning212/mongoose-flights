@@ -8,6 +8,8 @@ const ticketSchema = mongoose.Schema ({
     type: Number,
     min: 0
   }
+}, {
+  timestamps: true
 })
 
 const flightSchema = new Schema ({

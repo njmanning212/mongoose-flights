@@ -18,6 +18,7 @@
     <div>Departure Date: </div>
     <div><%= flight.departs %></div>
   </section>
+
   <h2>Tickets</h2>
   <form 
     id="add-ticket-form"
@@ -28,10 +29,8 @@
     <input type="text" name="seat" id="seat-text" placeholder="A1-F99">
     <label for="ticket-price">Price</label>
     <input type="text" name="price" id="ticket-price" placeholder="must be > 0">
+    <button type="submit">Add Ticket</button>
   </form>
-
-
-
 
   <% if (flight.tickets.length) { %>
    <table>
@@ -45,7 +44,7 @@
     <tbody>
       <% flight.tickets.forEach(ticket => { %>
       <tr>
-        <td><%= ticket.createdAt.toLocalDateString() %></td>
+        <td><%= ticket.createdAt.toLocaleDateString() %></td>
         <td><%= ticket.seat %></td>
         <td><%= ticket.price %></td>
       </tr>
