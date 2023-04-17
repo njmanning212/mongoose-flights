@@ -102,6 +102,10 @@ function update (req, res) {
   })
 }
 
+function createTicket (req, res) {
+  Flight.findById(req.params.flightId)
+}
+
 export {
   newflight as new,
   create,
@@ -110,4 +114,5 @@ export {
   show,
   edit,
   update,
+  createTicket,
 }
