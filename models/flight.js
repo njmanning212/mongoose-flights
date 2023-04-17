@@ -32,10 +32,9 @@ const flightSchema = new Schema ({
   departs: {
     type: Date,
     default: function (){
-      let today = new Date();
-      let oneYearFromToday = new Date(today.getTime());
-      oneYearFromToday.setFullYear(today.getFullYear() + 1);
-      return oneYearFromToday
+      let day = new Date();
+      day.setFullYear(day.getFullYear() + 1);
+      return day
     }
   }, 
   tickets: [ticketSchema], 
