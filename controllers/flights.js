@@ -36,6 +36,7 @@ function index (req, res) {
     res.render('flights/index', {
       flights,
       title: "All Flights"
+      // averageReview:
     })
   })
   .catch(error => {
