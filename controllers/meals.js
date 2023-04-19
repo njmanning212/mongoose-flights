@@ -15,11 +15,22 @@ function newMeal (req, res) {
 }
 
 function create (req, res) {
-  Meal.create(req.body)
-  .then (meal => {
-    res.redirect('/meals/new', {
-      error: false
-    })
+  Meal.findOne({name: req.body.name})
+  .then(duplicateMeal=> {
+    if (duplicateMeal) {
+      res.redirect('/meals/new')
+    } else {
+      Meal.create(req.body)
+      .then (meal => {
+        res.redirect('/meals/new', {
+          error: false
+        })
+      })
+      .catch(error => {
+        console.log(error)
+        res.render('meals/new')
+      })
+    }
   })
   .catch(error => {
     console.log(error)
