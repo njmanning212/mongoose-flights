@@ -11,10 +11,6 @@ function newflight (req, res) {
 }
 
 function create (req, res) {
-  console.log(req.body.departs)
-  let tempTime = new Date(req.body.departs)
-  req.body.departs = tempTime.toUTCString()
-  console.log(tempTime.toUTCString())
   if (req.body.flightN0) {
     req.body.flightN0 = parseInt(req.body.flightN0)
   }
@@ -129,7 +125,6 @@ function deleteTicket (req, res) {
   // find flight by id
   Flight.findById(req.params.flightId)
     .then(flight => {
-      // remove ticket by id from tickets array with filter as .remove() not working
       flight.tickets.remove({_id: req.params.ticketId})
       // save updated flight
       flight.save()
