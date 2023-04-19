@@ -6,15 +6,15 @@
 	<h1><%= title %></h1>
   <p>Please ensure that the Meal is not already in the dropdown
     <select>
-      <% meals.forEach(function(performer) { %>
-        <option><%= performer.name %></option>
+      <% meals.forEach(function(meal) { %>
+        <option><%= meal.name %></option>
       <% }) %>
     </select>
   </p>
   <form id="add-performer-form" action="/meals" method="POST">
-    <label for="name-input">Name:</label>
+    <label for="name-input">Meal Name:</label>
     <input type="text" name="name" id="name-input">
-    <button type="submit">Add Performer</button>
+    <button type="submit">Add Meal</button>
   </form>
 </main>
 
