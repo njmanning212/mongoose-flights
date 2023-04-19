@@ -22,9 +22,7 @@ function create (req, res) {
     } else {
       Meal.create(req.body)
       .then (meal => {
-        res.redirect('/meals/new', {
-          error: false
-        })
+        res.redirect('/meals/new')
       })
       .catch(error => {
         console.log(error)

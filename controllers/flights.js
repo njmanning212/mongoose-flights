@@ -153,6 +153,24 @@ function deleteTicket (req, res) {
     })
 }
 
+function addMeal (req, res) {
+  Flight.findById(req.params.flightId)
+    .then(flight => {
+      flight.meals.push(req.body.mealId)
+      flight.save()
+      .then(() => {
+        res.redirect(`/flights/${flight._id}`)
+      })
+      .catch(error => {
+        console.log(error)
+        res.redirect('/flights')
+      })
+    })
+    .catch(error => {
+      console.log(error)
+      res.redirect('/flights')
+    })
+}
 
 
 export {
@@ -165,4 +183,5 @@ export {
   update,
   createTicket,
   deleteTicket,
+  addMeal,
 }
